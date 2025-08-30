@@ -6,7 +6,7 @@ This work models the propagation and reflection of mmWave signals, leveraging op
 
 This work has been accepted by IEEE INFOCOM 2025. For more details, refer to our paper or code. Paper link: [mmGen](https://arxiv.org/abs/2503.21122).
 
-![image-20250822134859105](C:\Users\LiHao\AppData\Roaming\Typora\typora-user-images\image-20250822134859105.png)
+<img src="./img/main.png"/>
 
 ## Table of Contents
 
@@ -128,15 +128,15 @@ python eval_vis.py
 
 **Range Spectrum**
 
-![range](D:\资料\文献\info25\range.gif)
+<img src="./img/range.gif"/>
 
 **Range-Angle Spectrum**
 
-<img src="D:\资料\文献\info25\ra.gif" alt="ra" style="zoom:60%;" />
+<img src="./img\ra.gif" alt="ra" style="zoom:60%;" />
 
 **Micro-Doppler and Point Cloud**
 
-<img src="D:/资料/文献/info25/micro-doppler.png" alt="micro" style="zoom:50%;" /><img src="D:\资料\文献\info25\pc.gif" alt="pc" style="zoom:50%;" />
+<img src="./img/micro-doppler.png" alt="micro" style="zoom:50%;" /><img src="./img\pc.gif" alt="pc" style="zoom:50%;" />
 
 ## Acknowledgments
 
