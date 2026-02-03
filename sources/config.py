@@ -1,0 +1,40 @@
+''' =============== Point Cloud Config ============='''
+class PointCloudConfig:
+    LIGHT_V = 3e8
+    F_0 = 60e9
+    TOTAL_CHIRP_NUM = 765
+    SAMPLE_NUM = 256
+    TX_NUM = 3
+    RX_NUM = 4
+    CHIRP_NUM = TOTAL_CHIRP_NUM // TX_NUM
+    LAMDA = LIGHT_V / F_0
+    SAMPLE_RATE = 10000e3
+    ADC_START_TIME = 0
+    CHIRP_RAMP_TIME = 28e-6
+    IDLE_TIME = 7e-6
+    CHIRP_PERIOD = CHIRP_RAMP_TIME + IDLE_TIME
+    CHIRP_RAMP_RATE = 139.987e12
+    FRAME_NUM = 90
+    FRAME_PERIOD = 66.666665e-3
+    FRAME_SIZE = TOTAL_CHIRP_NUM * SAMPLE_NUM * RX_NUM
+    # extra calculated parameters
+    # RANGE_RES = SAMPLE_RATE * LIGHT_V / SAMPLE_NUM / CHIRP_RAMP_RATE / 2
+    RANGE_RES = LIGHT_V / 2 / CHIRP_RAMP_RATE / CHIRP_RAMP_TIME
+    # RANGE_MAX = SAMPLE_RATE * LIGHT_V / CHIRP_RAMP_RATE / 2
+    VELOCITY_RES = LAMDA / CHIRP_PERIOD / TX_NUM / CHIRP_NUM / 2
+    VELOCITY_MAX = LAMDA / CHIRP_PERIOD / TX_NUM / 4
+
+    # 距离限制设定
+    MAX_RANGE = 2.88
+    # MAX_R_I = int(MAX_RANGE * 2 * CHIRP_RAMP_RATE * SAMPLE_NUM / SAMPLE_RATE / LIGHT_V) + 1
+    MAX_R_I = int(MAX_RANGE / RANGE_RES) + 1
+    # MAX_R_I = SAMPLE_NUM
+    MIN_RANGE = 2.06
+    # MIN_R_I = int(CHIRP_RAMP_RATE * SAMPLE_NUM / SAMPLE_RATE / LIGHT_V) + 1
+    MIN_R_I = int(MIN_RANGE / RANGE_RES) + 1
+    # angle FFT 填充
+    ANGLE_PADDED_NUM = 64
+    # 天线间距d
+    d = LAMDA / 2
+    # 角度范围
+    theta_range = 180
